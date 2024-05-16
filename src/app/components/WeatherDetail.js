@@ -1,17 +1,18 @@
 "use client"
 import React,{useState} from 'react'
-import { API_BASE_URL,API_KEY } from '@/config/constants';
+
 const WeatherDetail = () => {
   const [data,setData]=useState({});
   const [city,setCity]=useState("");
-   
+  
   const handler=async (e)=>{
     e.preventDefault();
-    const response=await fetch(API_BASE_URL+"?city="+city,
+    console.log(process.env.API_BASE_URL);
+    const response=await fetch(process.env.API_BASE_URL+"?city="+city,
       {
         method: 'GET',
 	      headers: {
-		       'x-rapidapi-key': API_KEY,
+		       'x-rapidapi-key': process.env.API_KEY,
 		       'Content-Type': 'application/json'
 	      }
       }
