@@ -2,10 +2,10 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
     <header>
-      <nav className='flex items-center justify-between bg-gray-800 text-white py-4 px-6'>
-        <div className='text-2xl font-bold'>WeatherNow</div>
+      <nav className='flex flex-col md:flex-row items-center justify-between bg-gray-800 text-white py-4 px-6'>
+        <div className='text-2xl font-bold mb-4 md:mb-0'>WeatherNow</div>
         
-        <ul className='flex space-x-8 text-xl' >
+        <ul className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-xl'>
           <li>
             <Link href="/">
               Home
@@ -28,7 +28,7 @@ const Navbar = () => {
           </li>
         </ul>
         
-        <div className="space-x-4">
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
           <button className='bg-white text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-300 transition duration-300'>
             Login
           </button>
